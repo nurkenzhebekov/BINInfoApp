@@ -1,10 +1,12 @@
 package com.example.bininfoapp.domain.usecase
 
-import com.example.bininfoapp.domain.model.BinInfo
-import com.example.bininfoapp.domain.repository.BinRepository
+import com.example.bininfoapp.data.model.BinResponse
+import com.example.bininfoapp.data.repository.BinRepository
 
-class GetBinInfoUseCase(private val repository: BinRepository) {
-    suspend operator fun invoke(bin: String): BinInfo {
-        return repository.getBinInfo(bin)
-    }
+import javax.inject.Inject
+
+class GetBinInfoUseCase @Inject constructor(
+    private val repository: BinRepository
+) {
+    suspend operator fun invoke(bin: String): BinResponse = repository.getBinInfo(bin)
 }

@@ -1,17 +1,10 @@
 package com.example.bininfoapp.data.model
 
-data class BinInfoResponse(
-    val country: Country?,
-    val bank: Bank?,
+data class BinResponse(
     val scheme: String?,
     val type: String?,
-    val brand: String?
-)
-
-data class Country(
-    val name: String?,
-    val latitude: Double?,
-    val longitude: Double?
+    val bank: Bank?,
+    val country: Country?
 )
 
 data class Bank(
@@ -19,4 +12,10 @@ data class Bank(
     val url: String?,
     val phone: String?,
     val city: String?
+)
+
+data class Country(
+    val name: String?,
+    val latitude: Double?,
+    val longitude: Double?
 )

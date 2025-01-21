@@ -4,13 +4,15 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "bin_history")
-data class BinEntity(
+data class BinHistoryEntity(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val bin: String,
-    val country: String?,
-    val bank: String?,
     val scheme: String?,
     val type: String?,
-    val brand: String?,
-    val timestamp: Long = System.currentTimeMillis()
+    val bankName: String?,
+    val bankUrl: String?,
+    val bankPhone: String?,
+    val countryName: String?,
+    val latitude: Double?,
+    val longitude: Double?
 )
