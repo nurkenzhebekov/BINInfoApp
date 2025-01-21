@@ -1,4 +1,4 @@
-package com.example.bininfoapp.data.module
+package com.example.bininfoapp.di.module
 
 import com.example.bininfoapp.data.api.BinApiService
 import dagger.Module

@@ -32,8 +32,8 @@ fun BinHistoryScreen(viewModel: BinHistoryViewModel = hiltViewModel()) {
         items(history) { item ->
             Card(
                 modifier = Modifier
-                .fillMaxWidth()
-                .padding(vertical = 4.dp),
+                    .fillMaxWidth()
+                    .padding(vertical = 4.dp),
                 elevation = CardDefaults.cardElevation(4.dp)
             ) {
                 Column(Modifier.padding(16.dp)) {
@@ -51,6 +51,33 @@ fun BinHistoryScreen(viewModel: BinHistoryViewModel = hiltViewModel()) {
                                 context.startActivity(intent)
                             }
                         )
+                    }
+                    item.bankPhone?.let {
+                        Text(
+                            text = "Phone: $it",
+                            color = MaterialTheme.colorScheme.primary,
+                            modifier = Modifier.clickable {
+                                val intent = Intent(
+                                    Intent.ACTION_DIAL, Uri.parse("tel:$it")
+                                )
+                                context.startActivity(intent)
+                            }
+                        )
+                    }
+                    item.latitude?.let { lat ->
+                        item.longitude?.let { lon ->
+                            Text(
+                                text = "Location: $lat, $lon",
+                                color = MaterialTheme.colorScheme.primary,
+                                modifier = Modifier.clickable {
+                                    val intent = Intent(
+                                        Intent.ACTION_VIEW,
+                                        Uri.parse("geo:$lat,$lon?q=$lat,$lon")
+                                    )
+                                    context.startActivity(intent)
+                                }
+                            )
+                        }
                     }
                 }
             }

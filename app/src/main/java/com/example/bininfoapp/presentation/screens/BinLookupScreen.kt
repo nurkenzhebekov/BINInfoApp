@@ -42,7 +42,7 @@ fun BinLookupScreen(
             )
         )
         Spacer(Modifier.height(8.dp))
-        Button(onClick = { viewModel.fetchBinInfo(binInput)}) {
+        Button(onClick = { viewModel.fetchBinInfo(binInput) }) {
             Text("Lookup BIN")
         }
         binInfo?.let {
@@ -50,6 +50,11 @@ fun BinLookupScreen(
             Text("Type: ${it.type}")
             Text("Bank: ${it.bank?.name}")
             Text("Country: ${it.country?.name}")
+            Text("Bank URL: ${it.bank?.url}")
+            Text("Bank phone: ${it.bank?.phone}")
+            Text("Location: ${it.country?.latitude}")
+
+
         }
         error?.let {
             Text(text = it, color = Color.Red)

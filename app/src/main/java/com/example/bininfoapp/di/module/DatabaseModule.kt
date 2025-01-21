@@ -1,7 +1,9 @@
-package com.example.bininfoapp.data.local
+package com.example.bininfoapp.di.module
 
 import android.content.Context
 import androidx.room.Room
+import com.example.bininfoapp.data.local.AppDatabase
+import com.example.bininfoapp.data.local.BinHistoryDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

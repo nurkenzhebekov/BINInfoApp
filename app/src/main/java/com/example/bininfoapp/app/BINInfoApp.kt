@@ -1,4 +1,4 @@
-package com.example.bininfoapp
+package com.example.bininfoapp.app
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

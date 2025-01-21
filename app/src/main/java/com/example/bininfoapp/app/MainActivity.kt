@@ -1,4 +1,4 @@
-package com.example.bininfoapp
+package com.example.bininfoapp.app
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
