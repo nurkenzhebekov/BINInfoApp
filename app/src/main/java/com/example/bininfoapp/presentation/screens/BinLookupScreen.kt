@@ -17,10 +17,12 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.bininfoapp.presentation.viewmodel.BinViewModel
 import androidx.hilt.navigation.compose.hiltViewModel
 
+@Preview(showBackground = true)
 @Composable
 fun BinLookupScreen(
     viewModel: BinViewModel = hiltViewModel(),
@@ -51,6 +53,10 @@ fun BinLookupScreen(
         }
         error?.let {
             Text(text = it, color = Color.Red)
+        }
+        Spacer(Modifier.height(8.dp))
+        Button(onClick = onNavigateToHistory) {
+            Text("History")
         }
     }
 }

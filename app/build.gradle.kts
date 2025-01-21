@@ -1,8 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.compose)
-    id("org.jetbrains.kotlin.kapt")
+    id("com.google.devtools.ksp")
+    //id("org.jetbrains.kotlin.kapt")
     id("dagger.hilt.android.plugin")
 }
 
@@ -46,6 +46,9 @@ android {
 
 dependencies {
 
+    // KSP
+    implementation("com.google.devtools.ksp:symbol-processing-api:1.9.0-1.0.13")
+
     //Jetpack Compose
     implementation("androidx.compose.ui:ui:1.7.6")
     implementation("androidx.compose.material3:material3:1.0.1")
@@ -61,15 +64,15 @@ dependencies {
 
     //Room Database
     implementation("androidx.room:room-runtime:2.6.1")
-    kapt("androidx.room:room-compiler:2.6.1")
+    ksp("androidx.room:room-compiler:2.6.1")
+    //kapt("androidx.room:room-compiler:2.6.1")
     implementation("androidx.room:room-ktx:2.6.1")
 
     //Hilt for Dependency Injection
-    implementation("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03")
-    implementation("com.google.dagger:hilt-android:2.51.1")
-    kapt("com.google.dagger:hilt-compiler:2.51.1")
-    kapt("androidx.hilt:hilt-compiler:1.0.0")
-    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
+    implementation("com.google.dagger:hilt-android:2.51")
+    ksp("com.google.dagger:hilt-compiler:2.51")
+    //kapt("com.google.dagger:hilt-compiler:2.51")
+    implementation("androidx.hilt:hilt-navigation-compose:1.1.0-alpha01")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.0")
 
